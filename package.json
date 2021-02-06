@@ -1,0 +1,28 @@
+{
+  "name": "vue-todo",
+  "version": "1.0.0",
+  "description": "my todo app",
+  "main": "index.js",
+  "dependencies": {
+    "vue": "^3.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bandvov/Vue-todo.git"
+  },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "todo"
+  ],
+  "author": "bandvov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bandvov/Vue-todo/issues"
+  },
+  "homepage": "https://github.com/bandvov/Vue-todo#readme"
+}

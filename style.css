@@ -1,0 +1,79 @@
+
+.header .container {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(8, 75, 184);
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+    color: white;
+}
+.header .container .logo {
+    font-size: 2rem;
+}
+.header .container .form {
+    display: flex;
+}
+.header .container .form input[type='text'] {
+    width: 30vw;
+}
+.header .container .form button {
+    background-color: rgb(8, 75, 184);
+    padding: .5rem;
+    margin-left: 1rem;
+    outline: none;
+    border: 1px solid white;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.container h2{
+    display: flex;
+    width: 40vw; 
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+    border-bottom: 1px solid black;
+    padding-bottom: 1rem;
+}
+.container .mask-num {
+    text-align: center;
+    line-height: 1rem;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid rgb(8, 75, 184);
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 12px;
+}
+.container .mask-list {
+    padding-left: 0;
+
+}
+.container .mask-list li {
+    align-items: center;
+    display:flex;
+    list-style: none;
+    width: 40vw;
+    padding: 0;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.btn-remove {
+    background:none;
+    border: 1px solid red;
+    outline: none;
+    padding: .5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn-remove:hover {
+background-color: red;
+color: white;
+transition: .3s;
+}

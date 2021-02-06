@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo app</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <div class="container">
+          <div class="logo">To Do List</div>
+          <form class="form" v-on:submit.prevent="addTask">
+            <input
+              type="text"
+              name=""
+              id=""
+              v-bind:value="valueInput"
+              v-on:input="handlyInput"
+            />
+            <button type="submit">Add a new task</button>
+          </form>
+        </div>
+      </div>
+      <div class="container">
+        <h2>
+          <span>To Do</span>
+          <span class="mask-num">{{ needDoList.length }}</span>
+        </h2>
+        <ul class="mask-list">
+          <li
+            style="border-bottom: 1px solid black; padding: 0.5rem"
+            v-for="(mask, index) in needDoList"
+            :key="mask.id"
+          >
+            <div>
+              <label>
+                <input
+                  type="checkbox"
+                  name=""
+                  id=""
+                  v-on:click="doCheck(index,'need')"
+                />
+                <span style="margin-left: 1rem">{{ mask.title }}</span>
+              </label>
+            </div>
+            <button class="btn-remove" v-on:click="deleteItem(index,'need')">
+              Remove
+            </button>
+          </li>
+        </ul>
+        <h2>
+          <span>Done</span>
+          <span class="mask-num">{{completedList.length}}</span>
+        </h2>
+        <ul class="mask-list complete list">
+          <li
+            style="border-bottom: 1px solid black; padding: 0.5rem"
+            v-for="(mask, index) in completedList"
+            :key="mask.id"
+          >
+            <div>
+              <label>
+                <input
+                  type="checkbox"
+                  name=""
+                  id=""
+                  v-on:click="doCheck(index,'complete')"
+                  checked
+                />
+                <span>{{mask.title}}</span>
+              </label>
+            </div>
+            <button
+              class="btn-remove"
+              v-on:click="deleteItem(index,'completed')"
+            >
+              Remove
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="/index.js"></script>
+  </body>
+</html>
