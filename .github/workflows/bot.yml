@@ -9,25 +9,11 @@ on:
   pull_request:
     branches: [ master ]
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x, 15.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: notification
-      if: cancelled() == false
-      uses: xinthink/action-telegram@v1.1
-      with:
-        botToken: ${{ secrets.BOT_TOKEN }}
-        chatId: ${{ secrets.CHAT_ID }}
-        jobStatus: ${{ job.event }}
+  build:    
+    runs-on: ubuntu-latest    
+    steps:        
+    - uses: avkviring/telegram-github-action@v0.0.13
+      env:
+        telegram_to: ${{ secrets.TELEGRAM_TO }}  
+        telegram_token: ${{ secrets.TELEGRAM_TOKEN }}
+        event: ${{ toJson(github.event) }}
