@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest    
     steps:        
     - uses: appleboy/telegram-action@master
-  with:
+      with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           args: 👨🏻‍💻 User ${{github.actor}} in ${{ github.repository }} repository. Make ${{ github.event_name }}. Job ${{github.job}}.
