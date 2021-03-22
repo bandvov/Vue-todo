@@ -32,3 +32,4 @@ Vue.createApp({
     },
   },
 }).mount("#app");
+
